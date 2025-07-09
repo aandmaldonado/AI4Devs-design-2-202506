@@ -28,7 +28,9 @@ Finally, don’t forget to add your prompts in prompts.md inside your folder.
 
 Go for it!
 
-## Instrucciones ES
+---
+
+# Instrucciones ES
 
 En este ejercicio vas a actuar como un Product Manager y Business Analyst.
 
