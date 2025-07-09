@@ -1,4 +1,5 @@
 # LTI - Applicant Tracking System del Futuro 🚀
+
 ## Diseño de Sistema Completo 🛠️
 
 ![LTI ATS System](ats.png)
@@ -8,15 +9,18 @@
 ## 1. Descripción del Software LTI 💡
 
 ### Visión
+
 LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclutamiento mediante inteligencia artificial, automatización inteligente y colaboración en tiempo real.
 
 ### Valor Añadido
+
 - **IA Predictiva**: Análisis de compatibilidad candidato-puesto en tiempo real
 - **Automatización Inteligente**: Screening automático con aprendizaje continuo
 - **Colaboración Avanzada**: Workspace compartido con managers y stakeholders
 - **Analytics Predictivo**: Insights sobre éxito de contrataciones y retención
 
 ### Ventajas Competitivas
+
 1. **AI-First Approach**: IA integrada en cada proceso, no como add-on
 2. **Real-time Collaboration**: Colaboración síncrona entre todos los stakeholders
 3. **Predictive Analytics**: Anticipación de necesidades de talento
@@ -28,6 +32,7 @@ LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclut
 ## 2. Funciones Principales del Sistema ⚙️
 
 ### Core Functions
+
 1. **Gestión de Vacantes**
    - Creación inteligente de job descriptions
    - Distribución automática en múltiples canales
@@ -54,6 +59,7 @@ LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclut
    - Insights de mejora continua
 
 ### AI-Powered Features 🤖
+
 - **Smart Matching**: IA que aprende de decisiones previas
 - **Bias Detection**: Identificación automática de sesgos
 - **Predictive Hiring**: Anticipación de necesidades
@@ -63,8 +69,7 @@ LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclut
 
 ## 3. Lean Canvas (Visual) 📝
 
-```
-┌─────────────────────────────────────────────────────────────┐
+```┌─────────────────────────────────────────────────────────────┐
 │                    LEAN CANVAS - LTI                        │
 ├─────────────────────────────────────────────────────────────┤
 │ PROBLEMA                        │ SOLUCIÓN                  │
@@ -118,6 +123,7 @@ LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclut
 **Objetivo**: Crear y publicar una vacante optimizada con IA
 
 **Flujo Principal**:
+
 1. HR Manager inicia creación de vacante
 2. Sistema sugiere job description basada en historial
 3. IA analiza y optimiza requisitos
@@ -125,6 +131,7 @@ LTI (Leading Talent Intelligence) es el ATS del futuro que revoluciona el reclut
 5. Tracking automático de performance por canal
 
 **Diagrama (PlantUML Use Case) 🖼️:**
+
 ```plantuml
 @startuml
 left to right direction
@@ -157,6 +164,7 @@ UC4 --> UC5 : <<include>>
 **Objetivo**: Evaluar automáticamente candidatos y priorizar los mejores
 
 **Flujo Principal**:
+
 1. Candidato aplica a vacante
 2. IA analiza CV y genera matching score
 3. Sistema categoriza candidato (A/B/C)
@@ -164,6 +172,7 @@ UC4 --> UC5 : <<include>>
 5. Sistema programa entrevistas automáticamente
 
 **Diagrama (PlantUML Use Case) 🖼️:**
+
 ```plantuml
 @startuml
 left to right direction
@@ -199,6 +208,7 @@ AI --> UC6
 **Objetivo**: Tomar decisiones colaborativas sobre candidatos
 
 **Flujo Principal**:
+
 1. Recruiter comparte candidato con equipo
 2. Stakeholders evalúan en workspace compartido
 3. Sistema agrega feedback y scores
@@ -206,6 +216,7 @@ AI --> UC6
 5. Decisión final se registra y notifica
 
 **Diagrama (PlantUML Use Case) 🖼️:**
+
 ```plantuml
 @startuml
 left to right direction
@@ -240,6 +251,7 @@ UC4 --> UC5 : <<include>>
 ### Entidades Principales
 
 #### 1. User
+
 - **id** (UUID, PK)
 - **email** (String, unique)
 - **password_hash** (String)
@@ -251,6 +263,7 @@ UC4 --> UC5 : <<include>>
 - **updated_at** (Timestamp)
 
 #### 2. Company
+
 - **id** (UUID, PK)
 - **name** (String)
 - **industry** (String)
@@ -259,6 +272,7 @@ UC4 --> UC5 : <<include>>
 - **created_at** (Timestamp)
 
 #### 3. Job
+
 - **id** (UUID, PK)
 - **title** (String)
 - **description** (Text)
@@ -273,6 +287,7 @@ UC4 --> UC5 : <<include>>
 - **published_at** (Timestamp)
 
 #### 4. Candidate
+
 - **id** (UUID, PK)
 - **email** (String)
 - **first_name** (String)
@@ -285,6 +300,7 @@ UC4 --> UC5 : <<include>>
 - **created_at** (Timestamp)
 
 #### 5. Application
+
 - **id** (UUID, PK)
 - **candidate_id** (UUID, FK)
 - **job_id** (UUID, FK)
@@ -295,6 +311,7 @@ UC4 --> UC5 : <<include>>
 - **updated_at** (Timestamp)
 
 #### 6. Resume
+
 - **id** (UUID, PK)
 - **candidate_id** (UUID, FK)
 - **file_url** (String)
@@ -305,6 +322,7 @@ UC4 --> UC5 : <<include>>
 - **uploaded_at** (Timestamp)
 
 #### 7. Interview
+
 - **id** (UUID, PK)
 - **application_id** (UUID, FK)
 - **interviewer_id** (UUID, FK)
@@ -316,6 +334,7 @@ UC4 --> UC5 : <<include>>
 - **score** (Integer)
 
 #### 8. Collaboration
+
 - **id** (UUID, PK)
 - **application_id** (UUID, FK)
 - **user_id** (UUID, FK)
@@ -325,6 +344,7 @@ UC4 --> UC5 : <<include>>
 - **created_at** (Timestamp)
 
 #### 9. AI_Model
+
 - **id** (UUID, PK)
 - **name** (String)
 - **version** (String)
@@ -572,6 +592,7 @@ Rel(data, tdstore, "Accede")
 La sección "User Journey" describe el recorrido típico de un usuario clave (por ejemplo, un recruiter) a través del sistema LTI ATS, desde la creación de una vacante hasta la contratación y cierre del proceso. Este diagrama ayuda a visualizar los pasos, actores y emociones involucradas en la experiencia de usuario, facilitando la identificación de oportunidades de mejora y puntos críticos en el flujo.
 
 **Diagrama (Mermaid Journey) 🖼️:**
+
 ```mermaid
 journey
     title User Journey - Proceso de Reclutamiento LTI ATS
